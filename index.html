@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Planner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="left-panel">
+            <div class="header-box">
+                <h2>Job Event</h2>
+                <p>Pin job ads directly to your calendar dates.</p>
+            </div>
+            <div class="upload-image">
+                <label for="imageInput" class="upload-label">
+                    <span><i class="fa-solid fa-cloud-upload-alt"></i>Upload Ad</span>
+                    <input type="file" id="imageInput" accept="image/*">
+                </label>
+            </div>
+
+            <div class="image-preview" id="imagePreviewContainer">
+                <div class="placeholder-content" id="placeholderContent">
+                    <i class="fa-solid fa-image"></i>
+                    <p>No ad selected yet</p>
+                </div>
+                <img id="previewImage" src="" alt="Preview">
+            </div>
+
+            <div class="event-card">
+                <div class="event-input-box">
+                    <h3><span><i class="fa-solid fa-calendar"></i></span>Set Event</h3>
+                </div>
+
+                <label>Select Deadline Date</label>
+                <input type="date" id="eventDate">
+
+                <label>Add Quick Notes</label>
+                <textarea id="eventNote" placeholder="e,g,Email resume to HR"></textarea>
+
+                <button id="saveEventBtn">
+                    <span><i class="fa-solid fa-bookmark"></i>Save to Calendar</span>
+                </button>
+            </div>
+        </aside>
+    
+
+        <main class="right-panel">
+            <div class="calendar">
+                <div class="calendar-header">
+                    <div class="month-change-container">
+                        <button class="month-change" id="prev-month"><i class="fa-solid fa-angle-left"></i></button>
+                        <button class="month-picker" id="month-picker">Month</button>
+                        <button class="month-change" id="next-month"><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                    <div class="year-change-container">
+                        <button class="year-change" id="prev-year"><i class="fa-solid fa-angle-left"></i></button>
+                        <button id="year">2026</button>
+                        <button class="year-change" id="next-year"><i class="fa-solid fa-angle-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="calendar-body">
+                    <div class="calendar-week-days">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="calendar-days"></div>
+                </div>
+
+                <div class="date-time-format">
+                    <div class="day-text-formate">TODAY</div>
+                    <div class="date-time-value">
+                        <div class="time-formate"></div>
+                        <div class="date-formate"></div>
+                    </div>
+                </div>
+
+                <div class="month-list"></div>
+
+                <div class="year-list"></div>
+
+                <div id="eventModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-modal">&times</span>
+                        <h3>Event Details</h3>
+                        <p id="modalNote"></p>
+                        <div class="modal-body">
+                            <img id="modalImage" src="" alt="Event Ad">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
